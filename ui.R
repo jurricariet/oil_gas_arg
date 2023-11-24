@@ -17,8 +17,9 @@ function(request){
              
              uiOutput("welcome_dialog"),
              div(br(),
-                 h4("Producción de petróleo y gas de los 100 pozos más productivos. Seleccione la empresa que desea explorar"),
-             ),
+                 br(),
+                 br(),
+                 h4("Producción de petróleo y gas por empresa en 2023")),
                  fluidPage(
                    fluidRow(column(6,
                                    selectInput("empresa",
@@ -26,15 +27,29 @@ function(request){
                                                choices=sort(unique(prod_pozo_2023$empresa)),
                                               selected = "YPF S.A."
                                    ))),
-                 h5(tags$b("Mapa: "),"Pozos de producción de petróleo" ),
+                 fluidRow(column(6,
+                                 plotOutput("graf_pet")
+                 ),
+                 column(6,
+                        plotOutput("graf_gas"))
+                 ),
+                 div(br(),
+                     br(),
+                     ),
+                 fluidRow(column(6,h5(tags$b("Mapa: "),"Pozos de producción de petróleo" )),
+                          
+                          column(6,h5(tags$b("Mapa: "),"Pozos de producción de gas" ))),
                  fluidRow(
                    
                    # Show a plot of the generated distribution
                    column(6,
                           leafletOutput("prod_petroleo")
-                   )
+                   ),
+                   column(6,
+                          leafletOutput("prod_gas"))
                  )
-                   )
+                 
+                 )
                    
     )
   )

@@ -15,7 +15,12 @@ prod_pozo_2023 <- data %>%
 
 write_rds(prod_pozo_2023,"data/prod_pozos_2023.rds")
 
+prod_empresa_mes <- data %>% 
+  group_by(idempresa,empresa,anio,mes,tipo_de_recurso) %>% 
+  summarise(petroleo = sum(prod_pet,na.rm = T),
+            gas = sum(prod_gas,na.rm=T))
 
+write_rds(prod_empresa_mes,"data/prod_empresa_2023.rds")
 # Datos geo
 library(geoAr)
 geo <- get_geo("ARGENTINA", level = "provincia") %>%
