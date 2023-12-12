@@ -1,14 +1,16 @@
 function(request){
   navbarPage(
     title = div(  #### NavBar #####
-                  "",
-                  id = "title", class = "navbar1"),
-    id="navbar",
-    position = "fixed-top",
-    windowTitle = "Oil & gas Argentina",
-    collapsible = TRUE,
-    fluid = TRUE,
-    #header = includeCSS("styles.css"),
+                           div(
+                             id = "img-id",
+                             tags$a(img(src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",width = 30),href="https://github.com/jurricariet/oil_gas_arg",target = '_blank'
+                             )),
+                           "", id = "title", class = "navbar1"),
+             id="navbar",
+             position = "fixed-top",
+             windowTitle = "", 
+             collapsible = TRUE,
+             header = includeCSS("styles.css"),
     tabPanel("Oil & Gas Argentina",
              #useWaiter(),
              waiter_show_on_load(html = loading_screen, color = "lightgrey"),

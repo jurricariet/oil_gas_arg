@@ -33,18 +33,3 @@ leafIcons <- icons(
  shadowWidth = 50, shadowHeight = 64,
   shadowAnchorX = 4, shadowAnchorY = 62
 )
-
-
-# prod_empresa_2023 %>% 
-#   filter(empresa == input$empresa) %>% 
-#   ggplot(aes(x=fecha,y=petroleo,group=tipo_de_recurso,fill=tipo_de_recurso))+
-#   geom_col()+
-#   scale_y_continuous(labels = scales::number_format(scale=1/1e+3,suffix = " m"))+
-#   scale_x_date(date_breaks = "month",date_labels = "%b %Y")+
-#   scale_fill_manual(values = c("CONVENCIONAL"="#208c7c",
-#                                 "NO CONVENCIONAL"="#a55869"),
-#                     guide="none")+
-#   theme_minimal()+
-#   theme(plot.subtitle = element_markdown())+
-#   labs(x="",y="",title=glue::glue("{top_100_gas$empresa}: producción total de petróleo"),
-#        subtitle="En m3. <span style='color:#208c7c'>**Convencional**</span> y <span style='color:#a55869'>**no convencional**</span>")

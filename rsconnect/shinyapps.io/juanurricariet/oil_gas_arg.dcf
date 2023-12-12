@@ -5,6 +5,8 @@ account: juanurricariet
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 10619302
-bundleId: 7965447
+bundleId: 8034891
 url: https://juanurricariet.shinyapps.io/oil_gas_arg/
 version: 1
+asMultiple: FALSE
+asStatic: FALSE
