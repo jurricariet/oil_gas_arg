@@ -8,7 +8,7 @@ shinyServer(function(input, output) {
     showModal(
       modalDialog(
         title = "Pozos de petróleo y gas en Argentina",
-        HTML("<p>Producción de petróleo y gas por empresa a partir de datos de http://datos.gob.ar/</p>"),
+        HTML("<p>Producción de petróleo y gas por empresa a partir de datos de  <a href= 'http://datos.energia.gob.ar/' target='_blank'> http://datos.energia.gob.ar/</a></p>"),
         easyClose = T,
         size = "m",
         footer = modalButton("Ok")
@@ -19,7 +19,7 @@ shinyServer(function(input, output) {
                              filter(empresa == input$empresa & petroleo >0) %>% 
                                arrange(petroleo) %>% 
                                #top_n(100,petroleo) %>% 
-                               mutate(etiqueta=glue::glue("empresa: {empresa}<br> tipo: {tipo_de_recurso}<br>producción 2023: {round(petroleo)} m3") %>% 
+                               mutate(etiqueta=glue::glue("empresa: {empresa}<br> formación: {formacion}<br>tipo: {tipo_de_recurso}<br>producción 2023: {round(petroleo)} m3") %>% 
                                        lapply(htmltools::HTML))
                                
                              )
@@ -27,7 +27,7 @@ shinyServer(function(input, output) {
                             filter(empresa == input$empresa & gas > 0 ) %>% 
                             arrange(gas) %>% 
                             #top_n(100,gas) %>% 
-                            mutate(etiqueta=glue::glue("empresa: {empresa}<br> tipo: {tipo_de_recurso}<br>producción 2023: {round(gas)} miles de m3") %>% 
+                            mutate(etiqueta=glue::glue("empresa: {empresa}<br> formación: {formacion}<br>tipo: {tipo_de_recurso}<br>producción 2023: {round(gas)} miles de m3") %>% 
                                     lapply(htmltools::HTML))
   )
   

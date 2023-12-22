@@ -19,9 +19,9 @@ function(request){
              
              uiOutput("welcome_dialog"),
              div(br(),
-                 br(),
-                 br(),
                  h4("Producción de petróleo y gas por empresa en 2023")),
+             br(),
+             br(),
                  fluidPage(
                    fluidRow(column(6,
                                    selectInput("empresa",

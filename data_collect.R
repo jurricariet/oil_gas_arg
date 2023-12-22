@@ -5,7 +5,7 @@ data <- read_csv("http://datos.energia.gob.ar/dataset/c846e79c-026c-4040-897f-1a
 pozos <- read_csv("http://datos.energia.gob.ar/dataset/c846e79c-026c-4040-897f-1ad3543b407c/resource/cbfa4d79-ffb3-4096-bab5-eb0dde9a8385/download/listado-de-pozos-cargados-por-empresas-operadoras.csv")
 
 prod_pozo_2023 <- data %>% 
-  group_by(idempresa,empresa,idpozo,tipo_de_recurso,tipoextraccion) %>% 
+  group_by(idempresa,empresa,idpozo,formacion,tipo_de_recurso,tipoextraccion) %>% 
   summarise(gas = sum(prod_gas,na.rm=T),
             petroleo = sum(prod_pet,na.rm=T)) %>% 
   ungroup() %>% 
